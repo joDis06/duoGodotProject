@@ -91,6 +91,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l6ohk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi0c6")
 }],
 "loop": true,
 "name": &"idle_left",
@@ -108,6 +111,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jatw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oudfo")
 }],
 "loop": true,
 "name": &"idle_right",
@@ -122,9 +128,7 @@ script = ExtResource("1_kpjcp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1694872249]
 sprite_frames = SubResource("SpriteFrames_wi0c6")
-animation = &"idle_left"
-frame = 2
-frame_progress = 0.76978475
+animation = &"idle_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1874989356]
 position = Vector2(0, 2)
