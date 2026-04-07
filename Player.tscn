@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bjio4oxcpc658" path="res://player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://dvyg8ai5xnhtb" path="res://sprites/Polo_Lolipop_Back.png" id="2_cxr5p"]
-[ext_resource type="Texture2D" uid="uid://bh6fruvvoxvxq" path="res://Polo_Lolipop.png" id="2_kne1u"]
-[ext_resource type="Texture2D" uid="uid://bc1de12dvgqfa" path="res://Polo_Lolipop_Left.png" id="3_e80uo"]
-[ext_resource type="Texture2D" uid="uid://c3xvk0wxg788i" path="res://Polo_Lolipop_Right.png" id="4_cxr5p"]
+[ext_resource type="Texture2D" uid="uid://b2ddka8tb2akn" path="res://sprites/Polo_Lolipop.png" id="2_kne1u"]
+[ext_resource type="Texture2D" uid="uid://du6mlfpckoo46" path="res://sprites/Polo_Lolipop_Left.png" id="3_e80uo"]
+[ext_resource type="Texture2D" uid="uid://df42votfmn0jc" path="res://sprites/Polo_Lolipop_Right.png" id="4_cxr5p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rv870"]
 atlas = ExtResource("2_cxr5p")
