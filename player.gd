@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 			Directions.LEFT:
 				$AnimatedSprite2D.play("idle_left")
 			Directions.UP:
-				$AnimatedSprite2D.play("idle_forward") # wrong but lol
+				$AnimatedSprite2D.play("idle_backward") # wrong but lol
 			Directions.DOWN:
 				$AnimatedSprite2D.play("idle_forward")
 		

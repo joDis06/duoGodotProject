@@ -1,9 +1,26 @@
 [gd_scene format=3 uid="uid://5t7hnvaecrn2"]
 
 [ext_resource type="Script" uid="uid://bjio4oxcpc658" path="res://player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://dvyg8ai5xnhtb" path="res://sprites/Polo_Lolipop_Back.png" id="2_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://bh6fruvvoxvxq" path="res://Polo_Lolipop.png" id="2_kne1u"]
 [ext_resource type="Texture2D" uid="uid://bc1de12dvgqfa" path="res://Polo_Lolipop_Left.png" id="3_e80uo"]
 [ext_resource type="Texture2D" uid="uid://c3xvk0wxg788i" path="res://Polo_Lolipop_Right.png" id="4_cxr5p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv870"]
+atlas = ExtResource("2_cxr5p")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efikj"]
+atlas = ExtResource("2_cxr5p")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itxgx"]
+atlas = ExtResource("2_cxr5p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgsek"]
+atlas = ExtResource("2_cxr5p")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e80uo"]
 atlas = ExtResource("2_kne1u")
@@ -59,6 +76,26 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wi0c6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv870")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efikj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itxgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgsek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv870")
+}],
+"loop": true,
+"name": &"idle_backward",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e80uo")
@@ -128,7 +165,7 @@ script = ExtResource("1_kpjcp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1694872249]
 sprite_frames = SubResource("SpriteFrames_wi0c6")
-animation = &"idle_right"
+animation = &"idle_backward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1874989356]
 position = Vector2(0, 2)
