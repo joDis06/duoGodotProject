@@ -11,7 +11,7 @@ var last_move = Directions.DOWN
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	
-	self.scale = Vector2.ONE * (screen_size.y / 32) / 5 # last number is how tall in 
+	#self.scale = Vector2.ONE * (screen_size.y / 32) / 5 # last number is how tall in 
 														# relation to the screen he is and 32 is his pixel size
 
 
@@ -49,3 +49,5 @@ func _process(delta: float) -> void:
 		
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
+	print(position)
+	
