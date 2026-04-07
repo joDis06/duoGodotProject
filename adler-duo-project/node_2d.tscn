@@ -180,4 +180,4 @@ layer_0/tile_data = PackedInt32Array(0, 458752, 0, 65536, 458752, 0, 131072, 458
 
 [node name="Player" parent="." unique_id=1162355188 instance=ExtResource("6_kdubu")]
 position = Vector2(392, 194)
-scale = Vector2(4, 4)
+scale = Vector2(8, 8)
