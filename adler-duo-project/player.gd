@@ -10,6 +10,9 @@ var last_move = Directions.DOWN
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
+	
+	self.scale = Vector2.ONE * (screen_size.y / 32) / 5 # last number is how tall in 
+														# relation to the screen he is and 32 is his pixel size
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

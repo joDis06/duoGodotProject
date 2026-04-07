@@ -118,7 +118,6 @@ animations = [{
 size = Vector2(10, 28)
 
 [node name="Player" type="Area2D" unique_id=1162355188]
-scale = Vector2(6, 6)
 script = ExtResource("1_kpjcp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1694872249]
