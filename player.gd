@@ -17,39 +17,71 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Handle Movement
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
-		last_move = Directions.RIGHT
-		$AnimatedSprite2D.play("walking_right")
 		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
-		last_move = Directions.LEFT
-		$AnimatedSprite2D.play("walking_left")
 		velocity.x -= 1
 	if Input.is_action_pressed("move_down"):
-		last_move = Directions.DOWN
-		$AnimatedSprite2D.play("walking_forward")
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
-		last_move = Directions.UP
-		$AnimatedSprite2D.play("walking_backward")
 		velocity.y -= 1
 		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-	else:
-		# Play Idle when stopped
-		match last_move:
-			Directions.RIGHT:
-				$AnimatedSprite2D.play("idle_right")
-			Directions.LEFT:
-				$AnimatedSprite2D.play("idle_left")
-			Directions.UP:
-				$AnimatedSprite2D.play("idle_backward") # wrong but lol
-			Directions.DOWN:
-				$AnimatedSprite2D.play("idle_forward")
-		
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 	print(position)
+	
+	# Handle animations
+	# Cursed block of logic (this can be condensed by I don't really feel like it)
+	# Please refer to the truth table for guidance:
+	# +---+---------+
+	# |:3c| W A S D |
+	# +---+---------+
+	# | W | B B X B |
+	# | A | B L F X |
+	# | S | X F F F |
+	# | D | B X F R |
+	
+	#Left (and by extension combined up and down animation logic)
+	if Input.is_action_pressed("move_left"):
+		if Input.is_action_pressed("move_up"):
+			$AnimatedSprite2D.play("walking_backward")
+			return
+		if Input.is_action_pressed("move_down"):
+			$AnimatedSprite2D.play("walking_forward")
+			return
+		$AnimatedSprite2D.play("walking_left")
+		return
+	#Right (and by extension combined up and down animation logic)
+	if Input.is_action_pressed("move_right"):
+		if Input.is_action_pressed("move_up"):
+			$AnimatedSprite2D.play("walking_backward")
+			return
+		if Input.is_action_pressed("move_down"):
+			$AnimatedSprite2D.play("walking_forward")
+			return
+		$AnimatedSprite2D.play("walking_right")
+		return
+	#Pure up and down logic
+	if Input.is_action_pressed("move_up"):
+		$AnimatedSprite2D.play("walking_backward")
+		return
+	if Input.is_action_pressed("move_down"):
+		$AnimatedSprite2D.play("walking_forward")
+		return
+		
+	# Idle anims (can use just released because 
+	# if moving then would've broken out of function)
+	if Input.is_action_just_released("move_left"):
+		$AnimatedSprite2D.play("idle_left")
+	if Input.is_action_just_released("move_right"):
+		$AnimatedSprite2D.play("idle_right")
+	if Input.is_action_just_released("move_up"):
+		$AnimatedSprite2D.play("idle_backward")
+	if Input.is_action_just_released("move_down"):
+		$AnimatedSprite2D.play("idle_forward")
+	
 	
