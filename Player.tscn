@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://df42votfmn0jc" path="res://sprites/Polo_Lolipop_Right.png" id="4_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://2xgpr5sn4onh" path="res://sprites/Polo_Lolipop_walkBackward.png" id="6_dtqjt"]
 [ext_resource type="Texture2D" uid="uid://bwwbxnqny7v8d" path="res://sprites/Polo_Lolipop_walkForward.png" id="6_tdg3f"]
+[ext_resource type="Texture2D" uid="uid://b7xow780y5sfa" path="res://sprites/Polo_Lolipop_walkRight.png" id="8_5ncpa"]
+[ext_resource type="Texture2D" uid="uid://bylu7dr3edy0" path="res://sprites/Polo_Lolipop_walkLeft.png" id="8_wi0c6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rv870"]
 atlas = ExtResource("2_cxr5p")
@@ -106,6 +108,38 @@ region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_47wu6"]
 atlas = ExtResource("6_tdg3f")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p01ps"]
+atlas = ExtResource("8_wi0c6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7dl7"]
+atlas = ExtResource("8_wi0c6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48og4"]
+atlas = ExtResource("8_wi0c6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmpta"]
+atlas = ExtResource("8_wi0c6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ictha"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jgrc"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wy67"]
+atlas = ExtResource("8_5ncpa")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q26ax"]
+atlas = ExtResource("8_5ncpa")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wi0c6"]
@@ -230,15 +264,39 @@ animations = [{
 "name": &"walking_forward",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p01ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7dl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48og4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmpta")
+}],
 "loop": true,
 "name": &"walking_left",
-"speed": 5.0
+"speed": 4.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ictha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jgrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wy67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q26ax")
+}],
 "loop": true,
 "name": &"walking_right",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
@@ -249,7 +307,7 @@ script = ExtResource("1_kpjcp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1694872249]
 sprite_frames = SubResource("SpriteFrames_wi0c6")
-animation = &"walking_backward"
+animation = &"walking_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1874989356]
 position = Vector2(0, 2)
