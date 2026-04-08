@@ -20,21 +20,23 @@ func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		last_move = Directions.RIGHT
+		$AnimatedSprite2D.play("walking_right")
 		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
 		last_move = Directions.LEFT
+		$AnimatedSprite2D.play("walking_left")
 		velocity.x -= 1
 	if Input.is_action_pressed("move_down"):
 		last_move = Directions.DOWN
+		$AnimatedSprite2D.play("walking_forward")
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
 		last_move = Directions.UP
+		$AnimatedSprite2D.play("walking_backward")
 		velocity.y -= 1
 		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play("idle_forward") # hack to move him forward
-		$AnimatedSprite2D.stop() # Stop Idle when moving (hack)
 	else:
 		# Play Idle when stopped
 		match last_move:

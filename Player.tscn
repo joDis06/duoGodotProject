@@ -155,6 +155,26 @@ animations = [{
 "loop": true,
 "name": &"idle_right",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walking_backward",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walking_forward",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walking_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walking_right",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
@@ -165,7 +185,7 @@ script = ExtResource("1_kpjcp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1694872249]
 sprite_frames = SubResource("SpriteFrames_wi0c6")
-animation = &"idle_backward"
+animation = &"walking_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1874989356]
 position = Vector2(0, 2)
